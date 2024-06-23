@@ -117,7 +117,7 @@ export const ImageContainer = styled.main`
 `;
 
 export const ImageList = styled.ul`
-  width: 100%;
+  width: 100% ;
   display: flex;
   flex-flow: row wrap;
   height: 100%;
