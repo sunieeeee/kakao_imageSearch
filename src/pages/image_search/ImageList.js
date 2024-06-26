@@ -53,6 +53,9 @@ export const ImageContainer = styled.main`
       outline: none;
       color: #000;
 
+      &:-internal-autofill-selected {
+        background-color: transparent !important;
+      } 
       ${mq.maxWidth("lg")`
         font-size: 24px;
       `}
@@ -117,35 +120,34 @@ export const ImageContainer = styled.main`
 `;
 
 export const ImageList = styled.ul`
-  width: 100% ;
-  display: flex;
-  flex-flow: row wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   height: 100%;
   align-content: flex-start;
   overflow: hidden;
   opacity: 0;
-  /* transition-delay: .7s; */
+
+  ${mq.maxWidth("lg")`
+    grid-template-columns: repeat(4, 1fr);
+  `}
+  ${mq.maxWidth("md")`
+    grid-template-columns: repeat(3, 1fr);
+  `}
+  ${mq.maxWidth("sm")`
+    grid-template-columns: repeat(2, 1fr);
+  `}
 
   .list-item {
-    width: 20%;
-    height: 300px;
-    display: flex;
-    padding: 10px;
-
-    ${mq.maxWidth("lg")`
-      width: 25%;
-    `}
-    ${mq.maxWidth("md")`
-      width: 33.333%;
-    `}
-    ${mq.maxWidth("sm")`
-      width: 50%;
-    `}
+    width: 100%;
+    height: 280px;
 
     .list-item-link {
       border: 1px solid #d5d5d5;
       box-sizing: border-box;
       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -177,10 +179,18 @@ export const ImageList = styled.ul`
           font-weight: 600;
           margin-bottom: 10px;
           font-size: 18px;
+
+          ${mq.maxWidth("sm")`
+            font-size: 16px;
+          `}
         }
         ul {
           li {
             margin-bottom: 8px;
+
+            ${mq.maxWidth("sm")`
+              font-size: 14px;
+            `}
           }
         }
       }

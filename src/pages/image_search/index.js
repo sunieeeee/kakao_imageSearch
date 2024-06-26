@@ -75,6 +75,7 @@ import {getList} from '../../slices/ImageSearchSlice';
 
 import Spinner from '../../components/Spinner';
 import ErrorView from '../../components/ErrorView';
+import Meta from '../../components/Meta';
 
 //이미지 표시 컴포넌트
 import ImageView from './ImageView';
@@ -145,6 +146,7 @@ const ImageSearch = memo(() => {
   }, [inView]);
   return (
     <ImageContainer>      
+      <Meta title={keyword} />
       <Spinner loading={loading} />
 
       <article>
