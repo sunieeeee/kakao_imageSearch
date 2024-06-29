@@ -11,7 +11,7 @@ function pending(state, {meta, payload}) {
 }
 
 //리덕스가 성공 상태를 관리하는 상태값을 생성하는 함수
-function fulfilled(state, {meta, payload}) {
+function fulfilled(state, {meta, payload}) { 
   return {
     data: payload, //백엔드에서 받은 데이터
     loading: false,
