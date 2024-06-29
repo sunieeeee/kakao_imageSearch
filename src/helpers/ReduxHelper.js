@@ -17,7 +17,7 @@ function fulfilled(state, {meta, payload}) {
     loading: false,
     error: null
   }
-}
+} 
 
 //리덕스가 실패 상태를 관리하는 상태값을 생성하는 함수
 function rejected(state, {meta, payload}) {
